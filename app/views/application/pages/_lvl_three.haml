@@ -1,0 +1,24 @@
+%h1
+  Повышаем градус
+
+%h3
+  Главная
+%ul
+  %li{'ng-repeat' => 'item in items' }
+    {{$parent.opened == item}}
+    %a{'ng-click' => 'open(item)', 'ng-class' => '{selected: item == $parent.opened}'}
+      {{item.name}}
+
+%ng-switch{'on'=>'anyItemOpen()'}
+  %div{'ng-switch-when'=>'true'}
+    %hr
+    %h3
+      Детальная
+    %div{'ng-controller'=>'ItemController'}
+      %h2
+        {{opened.name}}
+      %p
+        {{opened.body}}
+      %p
+        %b {{ doneInWords(opened.done) }}
+    %a{'ng-click' => 'close()'}

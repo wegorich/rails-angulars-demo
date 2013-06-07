@@ -1,0 +1,30 @@
+= render partial: 'application/nav'
+
+%section.content{'ng-controller' => 'TodoItemsController'}
+
+  - if !params.has_key?(:tab) || params[:tab] == 'simple'
+    = render partial: 'application/pages/simple_example'
+
+  - if params[:tab] == 'level_two'
+    = render partial: 'application/pages/lvl_two'
+
+  - if params[:tab] == 'level_one'
+    = render partial: 'application/pages/lvl_one'
+
+  - if params[:tab] == 'level_tree'
+    = render partial: 'application/pages/lvl_three'
+
+  - if params[:tab] == 'level_fore'
+    = render partial: 'application/pages/lvl_fore'
+
+  - if params[:tab] == 'level_five'
+    = render partial: 'application/pages/lvl_five'
+
+  - if params[:tab] == 'level_two_one'
+    = render partial: 'application/pages/lvl_two_one'
+
+  - if params[:tab] == 'level_two_two'
+    = render partial: 'application/pages/lvl_two_two'
+
+  - if params[:tab] == 'level_two_three'
+    = render partial: 'application/pages/lvl_two_three'

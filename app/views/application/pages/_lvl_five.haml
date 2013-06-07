@@ -1,0 +1,32 @@
+%h1
+  Уже теплее градус
+
+%h3
+  Форма добавления TODO
+%form{'ng-submit' => 'addNewTodo()'}
+  .input
+    %input{'ng-model' => 'newTodo.name'}
+  .input
+    %textarea{'ng-model' => 'newTodo.body'}
+  .input
+    %input{type: 'checkbox', 'ng-model' => 'newTodo.done'}
+  %button Добавить
+
+%h3
+  Новые TODO ({{ (items | filter:{done:false}).length }})
+%p
+  %ol.todo_items
+    %li{'ng-repeat'=> 'item in items | filter:{done:false}'}
+      %h4 {{item.name}}
+      %p {{item.body}}
+      %input{type:'checkbox', 'ng-model' => 'item.done'}
+
+
+%h3
+  Готовые TODO ({{ (items | filter:{done:true}).length }})
+%p
+  %ol.todo_items
+    %li{'ng-repeat'=> 'item in items | filter:{done:true}'}
+      %h4 {{item.name}}
+      %p {{item.body}}
+      %input{type:'checkbox', 'ng-model' => 'item.done'}

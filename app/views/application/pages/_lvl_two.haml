@@ -1,0 +1,34 @@
+%h1
+  Чуть интереснее
+
+%h3
+  Фильтр
+
+%input{'ng-model' => 'searchText()'}
+
+%h3
+  Order
+
+%input{type: 'checkbox', 'ng-model' => 'reverse'}
+
+%h3
+  Все TODO
+%p
+  %a{'ng-click'=>'predicate = "name"; reverse=!reverse'}
+    Название
+
+  %a{'ng-click'=>'predicate = "body"; reverse=!reverse'}
+    Содержимое
+
+  %a{'ng-click'=>'predicate = "done"; reverse=!reverse'}
+    done
+
+  %a{'ng-click'=>'predicate = "updated_at"; reverse=!reverse'}
+    дата
+
+  %ol.todo_items
+    %li{'ng-repeat'=> 'item in items | filter:searchText | orderBy:predicate:reverse'}
+      %h4 {{item.name}}
+      %p {{item.body}}
+      %p {{item.updated_at}}
+      %input{type:'checkbox', 'ng-model' => 'item.done'}

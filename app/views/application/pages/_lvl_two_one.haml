@@ -1,0 +1,23 @@
+%h1
+  Сложнее
+%h3
+  Выбор TODO
+%select{'ng-model'=>'opened', 'ng-options'=>'item.name for item in items'}
+
+%ng-switch{'on'=>'anyItemOpen()'}
+  %div{'ng-switch-when'=>'true'}
+
+    %section{'ng-controller'=>'CommentsController'}
+      %h3
+        Форма добавления коммента
+      %form{'ng-submit' => 'addNewComment()'}
+        .input
+          %input{'ng-model' => 'newComment.body'}
+        %button Добавить
+
+      %h3
+        Комментарии ({{ items.length }})
+      %p
+        %ol.todo_items
+          %li{'ng-repeat'=> 'item in items'}
+            %p #({{item.id}}) - {{item.body}}

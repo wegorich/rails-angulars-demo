@@ -1,0 +1,22 @@
+%h1
+  Уже веселее
+%h3
+  Все todo ({{ items.length }})
+%ul
+  %li{'ng-repeat'=> 'item in items | filter:searchText | orderBy:predicate:reverse'}
+    %h4 {{item.name}}
+    %p #({{item.updated_at}}) - {{item.body}}
+    %section{'ng-controller'=>'CommentsController'}
+      %h3
+        Форма добавления коммента
+      %form{'ng-submit' => 'addNewComment()'}
+        .input
+          %input{'ng-model' => 'newComment.body'}
+        %button Добавить
+
+      %h3
+        Комментарии ({{ items.length }})
+      %p
+        %ol.todo_items
+          %li{'ng-repeat'=> 'item in items'}
+            %p #({{item.id}}) - {{item.body}}

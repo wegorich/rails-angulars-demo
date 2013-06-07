@@ -1,0 +1,26 @@
+%h1
+  Валидация
+%h3
+  Выбор TODO
+%select{'ng-model'=>'opened', 'ng-options'=>'item.name for item in items'}
+
+%ng-switch{'on'=>'anyItemOpen()'}
+  %div{'ng-switch-when'=>'true'}
+
+    %section{'ng-controller'=>'CommentsController'}
+      %h3
+        Форма добавления коммента
+      %form{'ng-submit' => 'addNewComment()',name: 'myForm'}
+        .input
+          %input{'ng-model' => 'newComment.body', 'smart-float'=>''}
+          %span{'ng-show'=>'myForm.$invalid'}
+            This is not a valid float number!
+            {{myForm.$invalid}}
+        %button{'ng-disabled'=>'myForm.$invalid'} Добавить
+
+      %h3
+        Комментарии ({{ items.length }})
+      %p
+        %ol.todo_items
+          %li{'ng-repeat'=> 'item in items'}
+            %p #({{item.id}}) - {{item.body}}

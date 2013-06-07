@@ -1,0 +1,21 @@
+%h1
+  Уровень новичек
+%h3
+  Форма добавления TODO
+%form{'ng-submit' => 'addNewTodo()'}
+  .input
+    %input{'ng-model' => 'newTodo.name'}
+  .input
+    %textarea{'ng-model' => 'newTodo.body'}
+  .input
+    %input{type: 'checkbox', 'ng-model' => 'newTodo.done'}
+  %button Добавить
+
+%h3
+  Все TODO ({{ items.length }})
+%p
+  %ol.todo_items
+    %li{'ng-repeat'=> 'item in items'}
+      %h4 {{item.name}}
+      %p {{item.body}}
+      %input{type:'checkbox', 'ng-model' => 'item.done'}

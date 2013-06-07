@@ -1,0 +1,28 @@
+*:focus
+  outline: none
+
+a
+  &.selected
+    color: red
+
+input.ng-invalid.ng-dirty
+  background-color: #FA787E
+
+
+aside
+  float: left
+  width: 30%
+  height: 100%
+  background: whitesmoke
+  .nav
+    li
+      a
+        color: gray
+        &:hover
+          color: darkcyan
+      &.selected a
+        color: black
+  + .content
+    margin-left: 5%
+    float: left
+    width: 65%
