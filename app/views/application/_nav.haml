@@ -1,28 +1,28 @@
 %aside
   %ol.nav
     %li{class: ('selected' if !params.has_key?(:tab) || params[:tab] == 'simple')}
-      = link_to 'Просто', {tab: 'simple'}
+      = link_to 'Вывод объекта и сomputed метод', {tab: 'simple'}
 
     %li{class: ('selected' if params[:tab] == 'level_one')}
-      = link_to 'Уровень новичек', {tab: 'level_one'}
+      = link_to 'Вывод списка', {tab: 'level_one'}
 
     %li{class: ('selected' if params[:tab] == 'level_two')}
-      = link_to 'Чуть интереснее', {tab: 'level_two'}
+      = link_to 'Вывод списка с фильтрами & Поиск', {tab: 'level_two'}
 
     %li{class: ('selected' if params[:tab] == 'level_tree')}
-      = link_to 'Повышаем градус', {tab: 'level_tree'}
+      = link_to 'Главная & Детальная страница', {tab: 'level_tree'}
 
     %li{class: ('selected' if params[:tab] == 'level_fore')}
-      = link_to 'select', {tab: 'level_fore'}
+      = link_to 'Select объект', {tab: 'level_fore'}
 
     %li{class: ('selected' if params[:tab] == 'level_five')}
-      = link_to 'filter conditions', {tab: 'level_five'}
+      = link_to 'Группировка по методу', {tab: 'level_five'}
 
     %li{class: ('selected' if params[:tab] == 'level_two_one')}
-      = link_to 'Средний уровень сложности', {tab: 'level_two_one'}
+      = link_to 'Отношение один ко многим', {tab: 'level_two_one'}
 
     %li{class: ('selected' if params[:tab] == 'level_two_two')}
       = link_to 'Групповой вывод', {tab: 'level_two_two'}
 
     %li{class: ('selected' if params[:tab] == 'level_two_three')}
-      = link_to 'Валидация', {tab: 'level_two_three'}
+      = link_to 'Простая валидация', {tab: 'level_two_three'}

@@ -6,25 +6,25 @@
     = render partial: 'application/pages/simple_example'
 
   - if params[:tab] == 'level_two'
-    = render partial: 'application/pages/lvl_two'
+    = render partial: 'application/pages/list_filter_and_order'
 
   - if params[:tab] == 'level_one'
-    = render partial: 'application/pages/lvl_one'
+    = render partial: 'application/pages/simple_list'
 
   - if params[:tab] == 'level_tree'
-    = render partial: 'application/pages/lvl_three'
+    = render partial: 'application/pages/main_details_page'
 
   - if params[:tab] == 'level_fore'
-    = render partial: 'application/pages/lvl_fore'
+    = render partial: 'application/pages/select_control'
 
   - if params[:tab] == 'level_five'
-    = render partial: 'application/pages/lvl_five'
+    = render partial: 'application/pages/grouping_data'
 
   - if params[:tab] == 'level_two_one'
-    = render partial: 'application/pages/lvl_two_one'
+    = render partial: 'application/pages/one_to_many_relationship'
 
   - if params[:tab] == 'level_two_two'
-    = render partial: 'application/pages/lvl_two_two'
+    = render partial: 'application/pages/one_to_many_in_list'
 
   - if params[:tab] == 'level_two_three'
-    = render partial: 'application/pages/lvl_two_three'
+    = render partial: 'application/pages/simple_validation'
